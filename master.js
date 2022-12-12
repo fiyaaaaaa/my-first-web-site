@@ -1,39 +1,37 @@
 var Links = {
-  setColor: function(color){
-    var alist = document.querySelectorAll('a');
-      var i = 0;
-      while (i < alist.length) {
-        alist[i].style.color = color;
-        i = i + 1;
-      }
+  setColor : function(color){
+    $('a').css('color', color);
+    // var alist = document.querySelectorAll('a');
+    // var i = 0;
+    // while (i < alist.length) {
+    //   alist[i].style.color = color;
+    //   i = i + 1;
+    // }
   }
 };
 
 var Body = {
   setColor : function(color){
-    document.querySelector('body').style.color=color;
+    //document.querySelector('body').style.color=color;
+    $('body').css('color', color);
   },
-    setBGColor : function(color){
-    document.querySelector('body').style.backgroundColor=color;
+  setBackgroundColor : function(color){
+    //document.querySelector('body').style.backgroundColor=color;
+    $('body').css('backgroundColor', color);
   }
 };
 
 function nightDayHandler(self){
-  var target = document.querySelector('body');
-
   if(self.value == 'night'){
-    Body.setBGColor('black');
-    Body.setColor('white');
+    Body.setBackgroundColor('powderblue');
+    Body.setColor('orange');
     self.value = 'day';
-
-    Links.setColor('powderblue');
-
+    Links.setColor('yellow')
   } else {
-    Body.setBGColor('white');
-    Body.setColor('black');
+    Body.setBackgroundColor('pink')
+    Body.setColor('purple');
     self.value = 'night';
-
-    Links.setColor('blue');
+    Links.setColor('green');
 
   }
 }
